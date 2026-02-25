@@ -1,0 +1,8 @@
+name: local
+variables:
+  - name: base_url
+    value: http://localhost
+  - secret: true
+    name: email
+  - secret: true
+    name: password
