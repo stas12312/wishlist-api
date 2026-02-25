@@ -1,0 +1,9 @@
+name: prod
+color: "#2E8A54"
+variables:
+  - name: base_url
+    value: https://mywishlists.ru
+  - secret: true
+    name: email
+  - secret: true
+    name: password
