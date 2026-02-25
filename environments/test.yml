@@ -1,0 +1,9 @@
+name: test
+color: "#CE4F3B"
+variables:
+  - name: base_url
+    value: https://test.mywishlists.ru
+  - secret: true
+    name: email
+  - secret: true
+    name: password
