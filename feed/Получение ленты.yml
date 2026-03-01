@@ -1,0 +1,25 @@
+info:
+  name: Получение ленты
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/api/feed?count=1&cursor&cursor"
+  params:
+    - name: count
+      value: "1"
+      type: query
+    - name: cursor
+      value: ""
+      type: query
+    - name: cursor
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
