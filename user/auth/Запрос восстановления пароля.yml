@@ -12,7 +12,6 @@ http:
       {
         "email": "{{email}}"
       }
-  auth: inherit
 
 runtime:
   variables:

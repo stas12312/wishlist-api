@@ -1,0 +1,51 @@
+info:
+  name: Редактирование вишлиста
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/wishlists/:uuid"
+  params:
+    - name: uuid
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "name": "{{name}}",
+        "description": "{{description}}",
+        "visible": {{visible}},
+        "visible_user_ids": {{visible_user_ids}}
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: name
+      value: Название
+    - name: description
+      value: Описание
+    - name: visible
+      value: "0"
+    - name: visible_user_ids
+      value: "null"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  # Редактирование вишлиста
+  Основные параметры:
+  * name: string - Название вишлиста
+  * descirption: string - Описание вишлиста
+  * visible: number - Доступность вишлиста 
+  * * 0 - Только мне
+  * * 1 - Всем по ссылке
+  * * 2 - Всем друзьям
+  * * 3 - Выбранным друзьям (Требуется указание visible_user_ids)
+  * visible_user_ids: number[] - Пользователи, которым доступен вишлиста (Требуется указание visible = 3)

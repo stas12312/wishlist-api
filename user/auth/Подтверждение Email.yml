@@ -13,7 +13,6 @@ http:
           "uuid": "{{uuid}}",
           "key": "{{key}}"
       }
-  auth: inherit
 
 runtime:
   variables:

@@ -15,7 +15,6 @@ http:
           "secret_key": "{{secret_key}}",
           "password": "{{password}}"
       }
-  auth: inherit
 
 runtime:
   variables:

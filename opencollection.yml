@@ -13,6 +13,11 @@ config:
         username: ""
         password: ""
       bypassProxy: ""
+
+request:
+  auth:
+    type: bearer
+    token: "{{access_token}}"
 bundled: false
 extensions:
   bruno:
@@ -22,4 +27,4 @@ extensions:
     presets:
       request:
         type: http
-        url: "{{base_url}}"
+        url: "{{base_url}}/api/"

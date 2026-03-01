@@ -12,7 +12,6 @@ http:
       {
         "refresh_token": {{refresh_token}}
       }
-  auth: inherit
 
 runtime:
   actions:

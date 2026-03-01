@@ -1,0 +1,24 @@
+info:
+  name: Архивация/удаление вишлиста
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{base_url}}/api/wishlists/:uuid"
+  params:
+    - name: uuid
+      value: ""
+      type: path
+  auth: inherit
+
+runtime:
+  variables:
+    - name: user_id
+      value: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
