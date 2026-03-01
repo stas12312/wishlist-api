@@ -1,0 +1,24 @@
+info:
+  name: Загрузка изображения
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/images/upload"
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: text
+        value: ""
+      - name: ""
+        type: text
+        value: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

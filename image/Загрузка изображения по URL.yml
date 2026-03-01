@@ -1,0 +1,26 @@
+info:
+  name: Загрузка изображения по URL
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/images/upload-by-url"
+  body:
+    type: json
+    data: |-
+      {
+        "url": "{{url}}"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: url
+      value: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

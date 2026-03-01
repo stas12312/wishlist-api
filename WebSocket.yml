@@ -1,0 +1,15 @@
+info:
+  name: WebSocket
+  type: websocket
+  seq: 3
+
+websocket:
+  url: "{{base_url}}/ws/?token={{access_token}}"
+  message:
+    type: json
+    data: "{}"
+  auth: inherit
+
+settings:
+  timeout: 0
+  keepAliveInterval: 0
