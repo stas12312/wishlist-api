@@ -1,0 +1,19 @@
+info:
+  name: Опубликовать статью
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}/api/admin/articles/:id/publish"
+  params:
+    - name: id
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

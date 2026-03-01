@@ -1,0 +1,19 @@
+info:
+  name: Снять статью с публикации
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base_url}}/api/admin/articles/:id/unpublish"
+  params:
+    - name: id
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

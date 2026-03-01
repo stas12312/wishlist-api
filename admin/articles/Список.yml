@@ -1,0 +1,25 @@
+info:
+  name: Список
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base_url}}/api/admin/articles?count=30&cursor&cursor"
+  params:
+    - name: count
+      value: "30"
+      type: query
+    - name: cursor
+      value: ""
+      type: query
+    - name: cursor
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

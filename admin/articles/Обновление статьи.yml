@@ -1,0 +1,47 @@
+info:
+  name: Обновление статьи
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/admin/articles"
+  body:
+    type: json
+    data: |-
+      {
+        "title": "{{title}}",
+        "slug": "{{slug}}",
+        "content": "{{content}}",
+        "image": "{{image}}",
+        "description": "{{description}}"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: title
+      value: Заголовок
+    - name: slug
+      value: slug-ссылка
+    - name: content
+      value: "{}"
+    - name: image
+      value: ""
+    - name: description
+      value: Описание
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  # Обновление статьи
+  Параметры:
+  * title: string - Заголовок
+  * slug: string - Slug название статьи
+  * description: string - Описание
+  * content: json - Содержимое статьи
+  * image: string - Ссылка на картинку
