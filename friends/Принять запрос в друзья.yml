@@ -1,0 +1,26 @@
+info:
+  name: Принять запрос в друзья
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{base_url}}/api/friends/apply_request"
+  body:
+    type: json
+    data: |-
+      {
+        "user_id": {{user_id}}
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: user_id
+      value: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

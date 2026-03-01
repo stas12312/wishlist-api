@@ -1,0 +1,26 @@
+info:
+  name: Проверка на дружбу
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{base_url}}/api/friends"
+  body:
+    type: json
+    data: |-
+      {
+        "user_id": {{user_id}}
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: user_id
+      value: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
