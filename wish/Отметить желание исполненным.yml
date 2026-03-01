@@ -1,0 +1,19 @@
+info:
+  name: Отметить желание исполненным
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: "{{base_url}}/api/wishes/:uuid/make_full"
+  params:
+    - name: uuid
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

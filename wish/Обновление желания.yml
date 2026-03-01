@@ -1,0 +1,59 @@
+info:
+  name: Обновление желания
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base_url}}/api/wishes"
+  body:
+    type: json
+    data: |-
+      {
+          "name": "{{name}}",
+          "wishlist_uuid": "{{wishlist_uuid}}",
+          "images": {{images}},
+          "comment": "{{comment}}",
+          "cost": {{cost}},
+          "currency": "{{currency}}",
+          "link": "{{link}}",
+          "desirability": {{desirability}}
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: name
+      value: Название
+    - name: wishlist_uuid
+      value: ""
+    - name: images
+      value: "[]"
+    - name: comment
+      value: Комментарий
+    - name: cost
+      value: "100"
+    - name: currency
+      value: RUB
+    - name: desirability
+      value: "5"
+    - name: link
+      value: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  # Обновление желания
+  Поля:
+  * wishlist_uuid: uuid - Идентификатор вишлиста
+  * name: string - Название
+  * comment: string - Комментарий
+  * link: string - Ссылка
+  * images: string[] - Список изображений
+  * cost: float - Цена
+  * currency: string - Код валюты
+  * desirability: number - Желанность (От 1 до 5)

@@ -1,0 +1,35 @@
+info:
+  name: Копирование желания
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{base_url}}/api/wishes/:uuid/move"
+  params:
+    - name: uuid
+      value: ""
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "wishlist_uuid": "{{wishlist_uuid}}"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: wishlist_uuid
+      value: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  # Копирование желания в другой вишлист
+  Параметры:
+  * wishlist_uuid - Идентификатор целевого вишлиста

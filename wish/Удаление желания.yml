@@ -1,0 +1,19 @@
+info:
+  name: Удаление желания
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{base_url}}/api/wishes/:uuid"
+  params:
+    - name: uuid
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

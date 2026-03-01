@@ -1,0 +1,19 @@
+info:
+  name: Восстановление желания
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{base_url}}/api/wishes/:uuid/restore"
+  params:
+    - name: uuid
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

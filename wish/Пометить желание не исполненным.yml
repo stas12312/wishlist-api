@@ -1,0 +1,19 @@
+info:
+  name: Пометить желание не исполненным
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{base_url}}/api/wishes/:uuid/cancel_full"
+  params:
+    - name: uuid
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
