@@ -1,0 +1,26 @@
+info:
+  name: Запуск получение желания по ссылке
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/parse"
+  body:
+    type: json
+    data: |-
+      {
+        "url": "{{url}}"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: url
+      value: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
