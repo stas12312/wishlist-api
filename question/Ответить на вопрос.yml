@@ -1,0 +1,30 @@
+info:
+  name: Ответить на вопрос
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base_url}}/api/questions/:id/answer"
+  params:
+    - name: id
+      value: "53"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "content": "{{content}}"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: content
+      value: Ответ на вопрос
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

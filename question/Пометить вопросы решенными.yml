@@ -1,0 +1,26 @@
+info:
+  name: Пометить вопросы решенными
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{base_url}}/api/questions/close"
+  body:
+    type: json
+    data: |-
+      {
+        "ids": {{ids}}
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: ids
+      value: "[]"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

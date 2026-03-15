@@ -1,0 +1,29 @@
+info:
+  name: Создать вопрос
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/questions"
+  body:
+    type: json
+    data: |-
+      {
+        "wish_uuid": "{{wish_uuid}}",
+        "content": "{{content}}"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: wish_uuid
+      value: ""
+    - name: content
+      value: Содержимое вопросы
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
