@@ -1,0 +1,32 @@
+info:
+  name: Создать обращение
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/tickets"
+  body:
+    type: json
+    data: |-
+      {
+        "subject": "{{subject}}",
+        "category_id": {{category_id}},
+        "content": "{{content}}"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: subject
+      value: Тема
+    - name: category_id
+      value: "1"
+    - name: content
+      value: Вот суть проблемы
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,19 @@
+info:
+  name: Получение сообщений тикета
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base_url}}/api/tickets/:id/conversation"
+  params:
+    - name: id
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

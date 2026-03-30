@@ -1,0 +1,30 @@
+info:
+  name: Отправить сообщение
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base_url}}/api/admin/tickets/:id/conversation"
+  params:
+    - name: id
+      value: "19"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "content": "{{content}}"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: content
+      value: Ответ
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

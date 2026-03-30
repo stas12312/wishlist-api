@@ -1,0 +1,29 @@
+info:
+  name: Создать категорию тикетов
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/api/admin/tickets/categories"
+  body:
+    type: json
+    data: |-
+      {
+        "title": "{{title}}",
+        "color": "{{color}}"
+      }
+  auth: inherit
+
+runtime:
+  variables:
+    - name: title
+      value: Ошибка
+    - name: color
+      value: "#000000"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
